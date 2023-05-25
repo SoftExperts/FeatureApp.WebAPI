@@ -1,6 +1,7 @@
 ﻿using DTOs;
 using FeatureApp.Entities;
 using Repository.Product;
+using System.Diagnostics;
 using E = FeatureApp.Entities;
 
 namespace Services.Product
@@ -15,13 +16,13 @@ namespace Services.Product
 
         #region Public Methods Region
 
-        public async Task AddProduct(ProductDto productDto)
+        public async Task AddProductAsync(ProductDto productDto)
         {
             try
             {
                 E.Product product = SetProductEntity(productDto);
 
-                await productRepo.AddProduct(product);
+                await productRepo.AddProductAsync(product);
             }
             catch (Exception)
             {
@@ -30,11 +31,31 @@ namespace Services.Product
             }
         }
 
-        public async Task<IEnumerable<ProductDto>> GetAllProducts()
+        public async Task AddRangeProductsAsync(List<ProductDto> productDtos)
         {
             try
             {
-               var res = await productRepo.GetAllProducts();
+                List<E.Product> productDtosList = new();
+
+                var products = productDtos.Select(x => SetProductEntity(x));
+
+                productDtosList.AddRange(products);                             
+
+                await productRepo.AddRangeProductsAsync(productDtosList);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task<IEnumerable<ProductDto>> GetAllProductsAsync()
+        {
+            try
+            {
+               var res = await productRepo.GetAllProductsAsync();
+
                return res.Select(x => SetProductDto(x));
             }
             catch (Exception)
@@ -44,36 +65,122 @@ namespace Services.Product
             }
         }
 
-     
+        public async Task<ProductDto>GetProductByIdAsync(Guid Id)
+        {
+            try
+            {
+                var product = await productRepo.GetProductByIdAsync(Id);
 
+                return SetProductDto(product);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task UpdateProductAsync(ProductDto productDto)
+        {
+            try
+            {
+                var product = SetProductEntity(productDto);
+
+                await productRepo.UpdateProductAsync(product);              
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task UpdateMultipleProductsAsync(IEnumerable<ProductDto> productDtos)
+        {
+            try
+            {
+                var products = productDtos.Select(x => SetProductEntity(x));
+
+                await productRepo.UpdateMultipleProductsAsync(products);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public async Task DeleteProductAsync(Guid Id)
+        {
+            try
+            {
+                await productRepo.DeleteProductAsync(Id);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        
+        public async Task DeleteRangeProductAsync(List<Guid> Ids)
+        {
+            try
+            {
+                await productRepo.DeleteRangeProductAsync(Ids);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
         #endregion
 
         #region Private Methods Region
-        private E.Product SetProductEntity(ProductDto productDto)
+
+        private static E.Product SetProductEntity(ProductDto productDto)
         {
-            return new E.Product()
+            var product = new E.Product();
+            
+            if (productDto.IsNew)
+            {              
+                product.CreatedDate = DateTime.Now;
+            }
+            else
             {
-                IsActive= productDto.IsActive,
-                Name= productDto.Name,
-                Description= productDto.Description,
-                Sku= productDto.Sku,
-                CreatedDate= DateTime.Now,
-                IsAvailable= productDto.IsAvailable,
-                Price  = productDto.Price,
-            };
+                product.ModifiedDate = DateTime.Now;                
+            }
+
+            productDto.IsNew = false;
+            product.Id = productDto.Id;
+            product.IsActive = productDto.IsActive;
+            product.Name = productDto.Name;
+            product.Description = productDto.Description;
+            product.Sku = productDto.Sku;
+            product.IsAvailable = productDto.IsAvailable;
+            product.Price = productDto.Price;
+
+            return product;
         }
 
-        private ProductDto SetProductDto(E.Product res)
+        private static ProductDto SetProductDto(E.Product res)
         {
-            return new ProductDto()
+            ProductDto productDto = new()
             {
+                Id = res.Id,
                 Name = res.Name,
                 Description = res.Description,
                 Price = res.Price, 
-                Sku= res.Sku,
+                Sku = res.Sku,
+                CreatedDate = res.CreatedDate,
+                IsAvailable = res.IsAvailable,
+                CreatedBy = res.CreatedBy,
+                IsActive = res.IsActive,
             };
 
+            return productDto;
         }
 
         #endregion

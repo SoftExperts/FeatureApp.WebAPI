@@ -121,6 +121,25 @@ namespace Repository.Genric
         }
 
         /// <summary>
+        /// Add Range With Save Async
+        /// </summary>
+        /// <param name="entities"></param>
+        /// <returns></returns>
+        public async Task AddRangeWithSaveAsync(IEnumerable<T> entities)
+        {
+            try
+            {
+                await Task.Run(() => Entity().AddRangeAsync(entities));
+                await Task.CompletedTask;
+                await SaveAsync();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        /// <summary>
         /// Sets the entity state as modified
         /// </summary>
         /// <param name="entity"></param>
@@ -154,6 +173,21 @@ namespace Repository.Genric
             }
         }
 
+        public async Task UpdateRangeWithSaveAsync(IEnumerable<T> entities)
+        {
+            try
+            {
+                await Task.Run(() => Entity().UpdateRange(entities));
+                await Task.CompletedTask;
+                await SaveAsync();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         /// <summary>
         /// Begins tracking the given entity in the Microsoft.EntityFrameworkCore.EntityState.Deleted
         /// state such that it will be removed from the database when Microsoft.EntityFrameworkCore.DbContext.SaveChanges
@@ -183,6 +217,11 @@ namespace Repository.Genric
             }
         }
 
+        /// <summary>
+        /// Delete Entities
+        /// </summary>
+        /// <param name="entities"></param>
+        /// <returns></returns>
         public async Task DeleteRangeAsync(IEnumerable<T> entities)
         {
             try
@@ -196,6 +235,11 @@ namespace Repository.Genric
             }
         }
 
+        /// <summary>
+        /// Delete Entities with Save
+        /// </summary>
+        /// <param name="entities"></param>
+        /// <returns></returns>
         public async Task DeleteRangeWithSaveAsync(IEnumerable<T> entities)
         {
             try
@@ -209,7 +253,22 @@ namespace Repository.Genric
             }
         }
 
+        /// <summary>
+        /// Get record by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<T> GetByIdAsync(int id)
+        {
+            return await Entity().FindAsync(id);
+        }
+        
+        /// <summary>
+        /// Get record by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<T> GetByIdAsync(Guid id)
         {
             return await Entity().FindAsync(id);
         }

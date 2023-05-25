@@ -11,7 +11,7 @@ namespace Entities
         /// Key for each entity's each record.
         /// </summary>
         [Key]
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.Empty;
         /// <summary>
         /// Date of the record created for each entity
         /// </summary>
@@ -36,5 +36,10 @@ namespace Entities
         /// Determines that record is active or not.
         /// </summary>
         public bool IsActive { get; set; }
+
+        /// <summary>
+        /// Determines that record is New.
+        /// </summary>
+        public bool IsNew { get; set; }
     }
 }

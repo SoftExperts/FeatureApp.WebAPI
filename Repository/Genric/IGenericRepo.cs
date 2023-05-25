@@ -46,6 +46,7 @@ namespace Repository.Genric
         /// <param name="entity"></param>
         /// <returns></returns>
         Task AddWithSaveAsync(T entity);
+        Task AddRangeWithSaveAsync(IEnumerable<T> entities);
 
         /// <summary>
         /// Sets the entity state as modified
@@ -57,7 +58,13 @@ namespace Repository.Genric
         /// Set the entity state as modified and saves in database as well
         /// </summary>
         /// <param name="entity"></param>
-        Task UpdateWithSaveAsync(T entity);
+        Task UpdateWithSaveAsync(T entities);
+        
+        /// <summary>
+        /// Set the entity state as modified and saves in database as well
+        /// </summary>
+        /// <param name="entity"></param>
+        Task UpdateRangeWithSaveAsync(IEnumerable<T> entities);
 
         /// <summary>
         /// Begins tracking the given entity in the Microsoft.EntityFrameworkCore.EntityState.Deleted
@@ -100,6 +107,13 @@ namespace Repository.Genric
         /// <param name="id"></param>
         /// <returns><seealso cref="T"/> entity</returns>
         Task<T> GetByIdAsync(int id);
+
+        /// <summary>
+        /// Get Entity by Id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Task<T> GetByIdAsync(Guid id);
 
         /// <summary>
         /// Gets the first entity record from database based on given predicate

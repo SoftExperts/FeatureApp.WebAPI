@@ -9,7 +9,7 @@ namespace DTOs
         /// <summary>
         /// Key for each entity's each record.
         /// </summary>
-        public Guid Id { get; set; }
+        public Guid Id { get; set; } = Guid.Empty;
         /// <summary>
         /// Date of the record created for each entity
         /// </summary>
