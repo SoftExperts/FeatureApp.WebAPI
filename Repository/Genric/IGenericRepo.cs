@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using Entities.QueryFilters;
+using System.Linq.Expressions;
 
 namespace Repository.Genric
 {
@@ -100,6 +101,13 @@ namespace Repository.Genric
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
         Task<IList<T>> GetAllRecords<T>() where T : class;
+
+        /// <summary>
+        /// Get All Records as Queryable.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        Task<IQueryable<T>> GetAllRecordsAsQueryable<T>() where T : class;
 
         /// <summary>
         /// Gets entity by id

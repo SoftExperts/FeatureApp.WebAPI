@@ -1,5 +1,7 @@
 ﻿using DTOs;
+using Entities.QueryFilters;
 using FeatureApp.Entities;
+using Repository.Genric;
 using Repository.Product;
 using System.Diagnostics;
 using E = FeatureApp.Entities;
@@ -57,6 +59,70 @@ namespace Services.Product
                var res = await productRepo.GetAllProductsAsync();
 
                return res.Select(x => SetProductDto(x));
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        
+        public async Task<IEnumerable<ProductDto>> GetAllRecordsAsQueryable(ProductQueryParameter queryParameters)
+        {
+            try
+            {
+                var products = await productRepo.GetAllRecordsAsQueryable();
+
+                if (queryParameters.MinPrice != null)
+                {
+                    products = products.Where(
+                        p => p.Price >= queryParameters.MinPrice.Value);
+                }
+
+                if (queryParameters.MaxPrice != null)
+                {
+                    products = products.Where(
+                        p => p.Price <= queryParameters.MaxPrice.Value);
+                }
+
+                if (!string.IsNullOrEmpty(queryParameters.Sku))
+                {
+                    products = products.Where(
+                        p => p.Sku == queryParameters.Sku);
+                }
+
+                if (!string.IsNullOrEmpty(queryParameters.Name))
+                {
+                    products = products.Where(
+                        p => p.Name.ToLower().Contains(
+                            queryParameters.Name.ToLower()));
+                }
+                
+                if (!string.IsNullOrEmpty(queryParameters.SearchTerm))
+                {
+                    products = products.Where(
+                        p =>
+                          p.Name.ToLower().Contains(queryParameters.SearchTerm.ToLower()) ||
+                          p.Sku.ToLower().Contains(queryParameters.SearchTerm.ToLower()
+                        ));
+                }
+                
+                if (!string.IsNullOrEmpty(queryParameters.SortBy))
+                {
+                    if(typeof(E.Product).GetProperty(queryParameters.SortBy)!= null)
+                    {
+                        products = products.OrderByCustom(
+                            queryParameters.SortBy,
+                            queryParameters.SortOrder);
+                    }
+                }
+
+                products = products
+                    .Skip(queryParameters.Size * (queryParameters.Page - 1))
+                    .Take(queryParameters.Size);
+
+
+                return products.Select(x => SetProductDto(x));
             }
             catch (Exception)
             {
@@ -155,7 +221,7 @@ namespace Services.Product
 
             productDto.IsNew = false;
             product.Id = productDto.Id;
-            product.IsActive = productDto.IsActive;
+            product.IsAvailable = productDto.IsActive;
             product.Name = productDto.Name;
             product.Description = productDto.Description;
             product.Sku = productDto.Sku;
@@ -177,7 +243,7 @@ namespace Services.Product
                 CreatedDate = res.CreatedDate,
                 IsAvailable = res.IsAvailable,
                 CreatedBy = res.CreatedBy,
-                IsActive = res.IsActive,
+                IsActive = res.IsAvailable,
             };
 
             return productDto;

@@ -58,41 +58,21 @@ namespace Repository.Genric
             return predicate is null ? query : query.Where(predicate);
         }
 
-        /// <summary>
-        /// Filters a sequence of values based on a predicate.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="source"></param>
-        /// <param name="predicate"></param>
-        /// <returns>An <see cref="IEnumerable{T}"/> that contains elements from the input 
-        /// sequence that satisfy the condition.</returns>
-        public static IEnumerable<T> Predicate<T>(this IEnumerable<T> source, Func<T, bool> predicate)
+        public static IQueryable<TEntity> OrderByCustom<TEntity>(this IQueryable<TEntity> items, string sortBy, string sortOrder)
         {
-            return predicate is null ? source : source.Where(predicate);
-        }
+            var type = typeof(TEntity);
+            var expression2 = Expression.Parameter(type, "t");
+            var property = type.GetProperty(sortBy);
+            var expression1 = Expression.MakeMemberAccess(expression2, property);
+            var lambda = Expression.Lambda(expression1, expression2);
+            var result = Expression.Call(
+                typeof(Queryable),
+                sortOrder == "desc" ? "OrderByDescending" : "OrderBy",
+                new Type[] { type, property.PropertyType },
+                items.Expression,
+                Expression.Quote(lambda));
 
-        /// <summary>
-        /// Gets the total number of records from database
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="query"></param>
-        /// <param name="predicate"></param>
-        /// <returns>Total Records in database</returns>
-        public static async Task<int> TotalCountAsync<T>(this IQueryable<T> query, Expression<Func<T, bool>> predicate)
-        {
-            return predicate is null ? await query.CountAsync() : await query.CountAsync(predicate);
-        }
-
-        /// <summary>
-        /// Gets the ids of this entity
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="query"></param>
-        /// <param name="select"></param>
-        /// <returns>List of ids</returns>
-        public static List<long> GetIds<T>(this IQueryable<T> query, Expression<Func<T, long>> select)
-        {
-            return query.Select(select).ToList();
+            return items.Provider.CreateQuery<TEntity>(result);
         }
     }
 }

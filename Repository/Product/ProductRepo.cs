@@ -1,4 +1,5 @@
 ﻿using Database;
+using Entities.QueryFilters;
 using FeatureApp.Entities;
 using Microsoft.IdentityModel.Tokens;
 using Repository.Genric;
@@ -107,6 +108,19 @@ namespace Repository.Product
 				throw;
 			}
 		}
+
+         public async Task<IQueryable<E.Product>> GetAllRecordsAsQueryable()
+		 {
+			try
+			{
+				return await genericRepo.GetAllRecordsAsQueryable<E.Product>();
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+		 }
 
         public async Task<E.Product> GetProductByIdAsync(Guid id)
         {
