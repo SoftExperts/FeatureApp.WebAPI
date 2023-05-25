@@ -1,4 +1,5 @@
 ﻿using DTOs;
+using Entities.QueryFilters;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Services.Product;
@@ -16,12 +17,26 @@ namespace FeatureApp.WebAPI.Controllers
             this.productService = productService;
         }
 
-        [HttpGet("GetAllProucts")]
+        [HttpGet("GetAllProudcts")]
         public async Task<ActionResult> GetAllProucts()
         {
             try
             {
                 return Ok(await productService.GetAllProductsAsync());
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        [HttpGet("GetFilteredProducts")]
+        public async Task<ActionResult> GetAllProucts([FromQuery] ProductQueryParameter parameters)
+        {
+            try
+            {
+                return Ok(await productService.GetAllRecordsAsQueryable(parameters));
             }
             catch (Exception)
             {

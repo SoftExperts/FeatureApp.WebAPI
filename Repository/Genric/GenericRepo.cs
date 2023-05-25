@@ -1,4 +1,5 @@
 ﻿using Database;
+using Entities.QueryFilters;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
@@ -360,6 +361,17 @@ namespace Repository.Genric
         public async Task<IList<T>> GetAllRecords<T>() where T : class
         {
             return _dbContext.Set<T>().ToList();
+        }
+        
+        
+        /// <summary>
+        /// Get all records from the source.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        public async Task<IQueryable<T>> GetAllRecordsAsQueryable<T>() where T : class
+        {
+            return _dbContext.Set<T>().AsQueryable<T>();
         }
 
         /// <summary>

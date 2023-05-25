@@ -35,7 +35,7 @@ namespace Entities
         /// <summary>
         /// Determines that record is active or not.
         /// </summary>
-        public bool IsActive { get; set; }
+        public bool IsAvailable { get; set; }
 
         /// <summary>
         /// Determines that record is New.
