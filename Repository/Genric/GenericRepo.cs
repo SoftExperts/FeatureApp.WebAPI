@@ -25,10 +25,7 @@ namespace Repository.Genric
             {
                 _dbContext.SaveChanges();
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            catch (Exception) { throw; }
         }
 
         /// <summary>
@@ -40,10 +37,7 @@ namespace Repository.Genric
             {
                 await _dbContext.SaveChangesAsync();
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            catch (Exception) { throw; }
         }
 
         /// <summary>
@@ -58,10 +52,7 @@ namespace Repository.Genric
             {
                 Entity().Add(entity);
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            catch (Exception) { throw; }
         }
 
         /// <summary>
@@ -80,10 +71,7 @@ namespace Repository.Genric
             {
                 await Entity().AddAsync(entity);
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            catch (Exception) { throw; }
         }
 
         /// <summary>
@@ -97,10 +85,7 @@ namespace Repository.Genric
                 Add(entity);
                 Save();
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            catch (Exception) { throw; }
         }
 
         /// <summary>
@@ -115,10 +100,7 @@ namespace Repository.Genric
                 await AddAsync(entity);
                 await SaveAsync();
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            catch (Exception) { throw; }
         }
 
         /// <summary>
@@ -134,10 +116,7 @@ namespace Repository.Genric
                 await Task.CompletedTask;
                 await SaveAsync();
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            catch (Exception) { throw; }
         }
 
         /// <summary>
@@ -151,10 +130,7 @@ namespace Repository.Genric
                 await Task.Run(() => _dbContext.Entry(entity).State = EntityState.Modified);
                 await Task.CompletedTask;
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            catch (Exception) { throw; }
         }
 
         /// <summary>
@@ -168,10 +144,7 @@ namespace Repository.Genric
                 await UpdateAsync(entity);
                 await SaveAsync();
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            catch (Exception) { throw; }
         }
 
         public async Task UpdateRangeWithSaveAsync(IEnumerable<T> entities)
@@ -212,9 +185,9 @@ namespace Repository.Genric
                 await DeleteAsync(entity);
                 await SaveAsync();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
 
@@ -230,9 +203,9 @@ namespace Repository.Genric
                 await Task.Run(() => Entity().RemoveRange(entities));
                 await Task.CompletedTask;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw ;
             }
         }
 
@@ -248,10 +221,7 @@ namespace Repository.Genric
                 await DeleteRangeAsync(entities);
                 await SaveAsync();
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            catch (Exception) { throw; }
         }
 
         /// <summary>
@@ -261,7 +231,9 @@ namespace Repository.Genric
         /// <returns></returns>
         public async Task<T> GetByIdAsync(int id)
         {
+#pragma warning disable CS8603 // Possible null reference return.
             return await Entity().FindAsync(id);
+#pragma warning restore CS8603 // Possible null reference return.
         }
         
         /// <summary>
@@ -271,7 +243,9 @@ namespace Repository.Genric
         /// <returns></returns>
         public async Task<T> GetByIdAsync(Guid id)
         {
+#pragma warning disable CS8603 // Possible null reference return.
             return await Entity().FindAsync(id);
+#pragma warning restore CS8603 // Possible null reference return.
         }
 
         /// <summary>
@@ -279,17 +253,14 @@ namespace Repository.Genric
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns>An entity record filtered by predicate</returns>
-        public async Task<T> GetAsync(Expression<Func<T, bool>> predicate)
-        {
-            return await Entity().FirstOrDefaultAsync(predicate);
-        }
+        public async Task<T> GetAsync(Expression<Func<T, bool>> predicate) => await Entity().FirstOrDefaultAsync(predicate);
 
         /// <summary>
         /// Gets the query from database based on given predicate
         /// </summary>
         /// <param name="predicate"></param>
         /// <returns>A query based on given predicate</returns>
-        public IQueryable<T> GetAsQueryable(Expression<Func<T, bool>> predicate = null)
+        public IQueryable<T> GetAsQueryable(Expression<Func<T, bool>>? predicate = null)
         {
             return Entity().Predicate(predicate);
         }
@@ -329,7 +300,9 @@ namespace Repository.Genric
         /// filtered by predicate</returns>
         public async Task<T> GetAsync(Expression<Func<T, bool>> predicate, List<string> thenIncludes, params Expression<Func<T, object>>[] includes)
         {
+#pragma warning disable CS8603 // Possible null reference return.
             return await Query().Includes(includes).ThenIncludes(thenIncludes).Predicate(predicate).FirstOrDefaultAsync();
+#pragma warning restore CS8603 // Possible null reference return.
         }
 
         /// <summary>

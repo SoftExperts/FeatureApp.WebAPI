@@ -18,6 +18,20 @@ builder.Services.AddSwaggerGen();
 //    options.UseInMemoryDatabase("FeatureAppDb");
 //});
 
+builder.Services.AddApiVersioning(options =>
+{
+    options.ReportApiVersions = true;
+    options.AssumeDefaultVersionWhenUnspecified = true;
+    options.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
+
+}) ;
+
+builder.Services.AddVersionedApiExplorer(options =>
+{
+    options.GroupNameFormat = "'v'VVV";
+    options.SubstituteApiVersionInUrl = true;
+});
+
 // This code will create the Database in MSSQL Server.
 builder.Services.AddDbContext<AppDbContext>(dbOptions => 
 dbOptions.UseSqlServer(builder.Configuration.GetConnectionString("AsifProdDb"))
