@@ -17,7 +17,7 @@ namespace Config
         {
             // Common
             services.AddTransient<IProductService, ProductService>();
-
+            services.AddSignalR();
             return services;
         }
     }

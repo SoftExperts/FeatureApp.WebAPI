@@ -233,6 +233,8 @@ namespace Services.Product
 
         private static ProductDto SetProductDto(E.Product res)
         {
+            if (res == null) return new ProductDto();
+
             ProductDto productDto = new()
             {
                 Id = res.Id,

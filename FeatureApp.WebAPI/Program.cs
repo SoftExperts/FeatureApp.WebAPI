@@ -1,6 +1,7 @@
 using Config;
 using Database;
 using Microsoft.EntityFrameworkCore;
+using Services.Chat;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -37,6 +38,27 @@ builder.Services.AddDbContext<AppDbContext>(dbOptions =>
 dbOptions.UseSqlServer(builder.Configuration.GetConnectionString("AsifProdDb"))
 );
 
+//builder.Services.AddCors(options =>
+//{
+//options.AddDefaultPolicy(
+//        builder =>
+//        {
+//            //builder.WithOrigins("https://localhost:7263", "https://localhost:7087/", "http://localhost:5249/");
+//            builder.AllowAnyOrigin();
+//        }
+//);
+//});
+
+builder.Services.AddCors(options => 
+{
+    options.AddPolicy("CORSPolicy", 
+        builder => 
+        builder.AllowAnyMethod()
+               .AllowAnyHeader()
+               .AllowCredentials()
+               .SetIsOriginAllowed((hosts) => true));
+});
+
 builder.Services.AddAndConfigureRepositories();
 builder.Services.AddAndConfigureServices();
 
@@ -56,6 +78,15 @@ else
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseCors("CORSPolicy");
+
+app.UseRouting();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapHub<ChatHub>("/chatHub");
+});
 
 app.MapControllers();
 
