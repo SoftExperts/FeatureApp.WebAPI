@@ -60,10 +60,10 @@ namespace Services.Product
 
                return res.Select(x => SetProductDto(x));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw new Exception($"Record Not found. {ex.Message}");
             }
         }
         

@@ -49,6 +49,9 @@ dbOptions.UseSqlServer(builder.Configuration.GetConnectionString("AsifProdDb"))
 //);
 //});
 
+
+//builder.Services.AddCors();
+
 builder.Services.AddCors(options => 
 {
     options.AddPolicy("CORSPolicy", 
@@ -80,6 +83,8 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.UseCors("CORSPolicy");
+
+//app.UseCors(options => options.WithOrigins("www.example.com").AllowAnyMethod().AllowAnyHeader());
 
 app.UseRouting();
 

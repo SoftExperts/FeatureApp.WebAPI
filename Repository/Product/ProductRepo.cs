@@ -102,12 +102,12 @@ namespace Repository.Product
 				return await genericRepo.GetAllRecords<E.Product>();
 
 			}
-			catch (Exception)
-			{
+            catch (Exception ex)
+            {
 
-				throw;
-			}
-		}
+                throw new Exception($"{ex.Message}");
+            }
+        }
 
          public async Task<IQueryable<E.Product>> GetAllRecordsAsQueryable()
 		 {

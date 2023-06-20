@@ -68,9 +68,9 @@ namespace Database.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("ae61e959-d1de-4712-8cd2-a0f4a27156a4"),
-                            CreatedBy = new Guid("1bf164a7-6e21-45dc-8650-13d8bf076c3e"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(8849),
+                            Id = new Guid("5f5b5b7c-92cb-4d29-aaf9-afc01df898ce"),
+                            CreatedBy = new Guid("e56d0288-9e4f-49ca-9c23-fcaa9c9dfd02"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(223),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -80,7 +80,7 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("aa6ebdd6-b9b9-4fe5-8211-48c1ce45b57c"),
+                            Id = new Guid("17097e37-b580-4d9d-9710-829fce6cd3bb"),
                             CreatedBy = new Guid("00000000-0000-0000-0000-000000000000"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Description = "",
@@ -92,9 +92,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("98ba6056-8467-47ee-9b6d-4e5f4843d191"),
-                            CreatedBy = new Guid("30fc29b5-aff8-474b-a2b1-a9e2592844aa"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(8876),
+                            Id = new Guid("32a4ea55-39f1-4eca-a4f0-86b0c37280f4"),
+                            CreatedBy = new Guid("301a39c9-1716-47da-9df2-1ffd6540ead2"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(292),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -104,9 +104,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("7b38a6c6-01d6-47b8-9c70-21b007a6aa27"),
-                            CreatedBy = new Guid("fbd44789-d213-4482-a89e-4f20499ac88b"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(8881),
+                            Id = new Guid("801a34ea-499a-4e3b-90cc-aeac28e142ba"),
+                            CreatedBy = new Guid("4b342a2c-cf76-4040-afba-086c1dffb071"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(298),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -116,9 +116,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("2d6922c8-d514-42b8-908c-fab3dc7db594"),
-                            CreatedBy = new Guid("6aad02a9-8b12-4639-aa6e-91fce2715199"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(8902),
+                            Id = new Guid("4629fa34-4adb-41c1-9b28-13f1c8401a1c"),
+                            CreatedBy = new Guid("d732f60f-9909-4db1-a709-3e5f6dddae36"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(303),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -128,9 +128,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("93d6a877-2e2d-4928-a192-5ada937f7e52"),
-                            CreatedBy = new Guid("0613730e-c5f6-482b-994b-56c4589ef30a"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(8906),
+                            Id = new Guid("c05e6026-cc88-4518-bafa-50b63cdb30b0"),
+                            CreatedBy = new Guid("e6db081c-141a-47b7-8cc8-86af7e56270d"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(307),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -140,9 +140,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ba65699e-328f-4159-a193-e2fc49c7ff07"),
-                            CreatedBy = new Guid("99b73bdb-e838-404b-a263-cd23e5325ff1"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(8911),
+                            Id = new Guid("0aaa9b00-00c6-4ba5-baa2-05a7215808cb"),
+                            CreatedBy = new Guid("901effc6-1fa9-48ae-be6b-bd643d7e72a8"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(356),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -152,9 +152,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("08edee98-66d5-4069-923b-902320bd23dd"),
-                            CreatedBy = new Guid("4b09b6c3-e101-46a6-9b4f-3eb292aad80b"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(8916),
+                            Id = new Guid("a2cd87b8-fcaa-469c-a929-6e71aeeff7ea"),
+                            CreatedBy = new Guid("338ff618-61d4-4bda-ac42-2630ed407bc0"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(364),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -164,9 +164,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("b3d7c044-5ffd-40f0-a95f-44c727dea350"),
-                            CreatedBy = new Guid("f7708a18-96cc-409b-a399-54f845ab9d0c"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(8926),
+                            Id = new Guid("753b3150-d6f3-412f-985f-ef0de6428168"),
+                            CreatedBy = new Guid("392b751c-0f29-4159-ac97-9215a3cbcff3"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(406),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -176,9 +176,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a807c153-ab09-4ae3-a656-ef1efc339be7"),
-                            CreatedBy = new Guid("8df2d7a1-53a3-4579-b4ba-6fcd9f6759eb"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(8932),
+                            Id = new Guid("d944e3f6-e427-445d-ac5e-d8762457ee66"),
+                            CreatedBy = new Guid("7c13d4fb-c44a-416d-bfed-ba06eb87f1c8"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(410),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -188,9 +188,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("39faf3ba-bc1c-446c-9cfa-b5a9eba3369d"),
-                            CreatedBy = new Guid("2bae3a44-35b0-4b97-b69f-821280596c1d"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(8937),
+                            Id = new Guid("14c25491-d1d0-4c5b-8626-9b11b1bef8b7"),
+                            CreatedBy = new Guid("e6c150fe-de66-4814-adf3-d3223f46c339"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(420),
                             Description = "",
                             IsAvailable = false,
                             IsNew = false,
@@ -200,9 +200,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5d462dc6-0d12-4b92-ae04-7e40bd611763"),
-                            CreatedBy = new Guid("e2449132-01d8-440b-956b-84d2b1ad3b99"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(8942),
+                            Id = new Guid("8531f7be-520c-41f3-93fe-2fb3f53b6e08"),
+                            CreatedBy = new Guid("4f95fdf7-fdfc-4205-9819-bfc54c4e70c2"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(425),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -212,9 +212,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("44332d9c-b567-43ca-b64d-2376ffbe7bf6"),
-                            CreatedBy = new Guid("7582a606-22e4-4e6f-a97e-433a880a1cf8"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(8953),
+                            Id = new Guid("37ab027e-579f-4d03-b906-3b173aaf2bbf"),
+                            CreatedBy = new Guid("1e1013ee-a58e-47f6-9dd0-7bdadc9d1beb"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(430),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -224,9 +224,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("f505f2cf-1dae-4b9c-ace8-fbed77f4cf34"),
-                            CreatedBy = new Guid("c1934d0f-0d1c-43df-b74d-71f22f050c13"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(8959),
+                            Id = new Guid("33cb5ac5-e188-46a6-a36b-9edba3840e1f"),
+                            CreatedBy = new Guid("2405c6dd-7518-4df7-9cca-821aceb6dd66"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(435),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -236,9 +236,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("ae876fa9-e83a-4242-b9de-f46fdd10748d"),
-                            CreatedBy = new Guid("62e5da14-d316-4bd6-a26b-80864cf5c761"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(8964),
+                            Id = new Guid("6885910e-654d-4304-a686-0996960e07f2"),
+                            CreatedBy = new Guid("1ec3139e-6eb4-4411-b5a4-b7e8dc0d2e9d"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(446),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -248,9 +248,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("e7a41e4c-df22-4209-aebf-e71f408873f5"),
-                            CreatedBy = new Guid("181c6169-298c-4410-be16-be22877daf8f"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(8969),
+                            Id = new Guid("0001bf54-dad7-4485-820a-3e659b5f1532"),
+                            CreatedBy = new Guid("11ae6566-0cdf-4275-9bfa-8bf638f8c8c2"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(455),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -260,9 +260,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("adb78f6e-afdf-45ca-968a-a03ae4a8877e"),
-                            CreatedBy = new Guid("4792910e-6ffa-4f56-8c54-724e78e092c7"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(9146),
+                            Id = new Guid("06b9d422-12c2-48a6-b69a-df5459dab549"),
+                            CreatedBy = new Guid("7e22a0c8-075e-43e0-a523-f80afdcba511"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(460),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -272,9 +272,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("c8698c08-2514-48eb-9b23-1b2e32120a81"),
-                            CreatedBy = new Guid("977d9979-57ce-4180-bd91-4cb910fcebb6"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(9153),
+                            Id = new Guid("47103682-53d9-44af-858d-1334fc158f3e"),
+                            CreatedBy = new Guid("84290e11-97f7-4783-93b1-2d3a83b78db5"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(466),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -284,9 +284,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("dc64c838-d59e-4983-91c2-17fa0a5334db"),
-                            CreatedBy = new Guid("97b47faa-a1cf-4222-b46a-12b8e954adf0"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(9157),
+                            Id = new Guid("d1b779b3-ff06-4064-8994-ad573ac56117"),
+                            CreatedBy = new Guid("beb90bae-b46c-4a14-bc20-9ec1599fc162"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(474),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -296,9 +296,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("4e18bdbd-e25d-4d3e-9bd9-8c381503f97c"),
-                            CreatedBy = new Guid("ca5f9830-61ca-4334-a84f-547ea7519104"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(9160),
+                            Id = new Guid("03b10d77-c7d8-4c56-8e7e-0d9370f51b2b"),
+                            CreatedBy = new Guid("0812c0c3-ca82-4b97-89dd-7b5bffab2362"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(479),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -308,9 +308,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("5539c177-9621-471d-86e0-54d488299c58"),
-                            CreatedBy = new Guid("10c49d9f-898f-42ee-89c1-7ddb8b300b10"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(9166),
+                            Id = new Guid("fe6fc5b7-b808-4c04-ab60-ca9a7aa0db57"),
+                            CreatedBy = new Guid("e66f737d-38aa-4648-8f73-d27b9dac63c4"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(483),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -320,9 +320,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("a3cdb4af-bae4-4888-b7ef-d39f661089b0"),
-                            CreatedBy = new Guid("116a1a2e-cd1b-43c4-a5ad-ab575fea16b7"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(9170),
+                            Id = new Guid("662c166f-a7bf-4295-b381-efd2b6898ea4"),
+                            CreatedBy = new Guid("24ca322f-3233-4bb8-9046-ba7cc3681039"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(487),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -332,9 +332,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("fdeb992a-6465-472a-b2e6-b2cc0e3258d7"),
-                            CreatedBy = new Guid("d8f8fc88-c132-418b-875c-8c4b6f449c5b"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(9173),
+                            Id = new Guid("1c50ceb2-17ef-4d00-88de-9d710bf089a8"),
+                            CreatedBy = new Guid("36a126ac-7f08-43dd-ad44-a7c5a65f0848"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(494),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -344,9 +344,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("d58e4a7e-2d66-4129-b419-ffd6c8c85d7e"),
-                            CreatedBy = new Guid("2bdacefb-eef3-4d8d-b84d-52988480adba"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(9176),
+                            Id = new Guid("c34f03e2-f73a-41f0-ba2b-1015eea686e0"),
+                            CreatedBy = new Guid("a6a54f09-749f-4336-af42-97e03772573f"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(502),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,
@@ -356,9 +356,9 @@ namespace Database.Migrations
                         },
                         new
                         {
-                            Id = new Guid("99fc1098-87e5-427b-811b-81b503410ec6"),
-                            CreatedBy = new Guid("6ab4137d-b362-4b88-aa18-a1cd352bec45"),
-                            CreatedDate = new DateTime(2023, 5, 25, 18, 38, 23, 48, DateTimeKind.Local).AddTicks(9182),
+                            Id = new Guid("5bf19323-ea5f-4582-84a6-f60cdbaaec7a"),
+                            CreatedBy = new Guid("382a9873-3a2d-4668-bd84-8855c73dfdcd"),
+                            CreatedDate = new DateTime(2023, 6, 20, 16, 54, 31, 795, DateTimeKind.Local).AddTicks(510),
                             Description = "",
                             IsAvailable = true,
                             IsNew = false,

@@ -333,7 +333,15 @@ namespace Repository.Genric
         /// <returns></returns>
         public async Task<IList<T>> GetAllRecords<T>() where T : class
         {
-            return _dbContext.Set<T>().ToList();
+            try
+            {
+                 return _dbContext.Set<T>().ToList();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
         
         

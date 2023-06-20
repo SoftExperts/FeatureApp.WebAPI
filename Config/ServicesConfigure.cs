@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Services.Product;
+using Services.SecurityAttacks;
 
 namespace Config
 {
@@ -17,6 +18,7 @@ namespace Config
         {
             // Common
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ISecurityAttacks, SecurityAttacks>();
             services.AddSignalR();
             return services;
         }
