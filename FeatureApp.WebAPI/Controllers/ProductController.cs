@@ -32,8 +32,8 @@ namespace FeatureApp.WebAPI.Controllers
             }
         }
 
-        [HttpGet("GetFilteredProducts")]
-        public async Task<ActionResult> GetAllProucts([FromQuery] ProductQueryParameter parameters)
+        [HttpPost("GetFilteredProducts")]
+        public async Task<ActionResult> GetAllProucts([FromBody] ProductQueryParameter parameters)
         {
             try
             {
